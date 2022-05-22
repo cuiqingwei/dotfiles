@@ -74,10 +74,9 @@ ZSH_THEME="ys"
 plugins=(
 	git
 	autojump
+	zsh-syntax-highlighting
+	zsh-autosuggestions
 )
-
-# add for autojump
-[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
 source $ZSH/oh-my-zsh.sh
 
@@ -112,3 +111,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # Fig post block. Keep at the bottom of this file.
 . "$HOME/.fig/shell/zshrc.post.zsh"
+
+# add for autojump
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
