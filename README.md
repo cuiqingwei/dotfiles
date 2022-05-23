@@ -13,6 +13,24 @@ rm -rf .gitconfig
 ln -s dotfiles/.gitconfig .gitconfig
 ```
 
+## zsh
+
+1. Oh-My-Zsh
+   [https://ohmyz.sh/](https://ohmyz.sh/)
+
+2. plug：autojump
+   [https://github.com/wting/autojump](https://github.com/wting/autojump)
+
+3. plug：zsh-syntax-highlighting
+   [https://github.com/zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+   ```bash
+   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+   ```
+4. plug：zsh-autosuggestions
+   [https://github.com/zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+   ```bash
+   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+   ```
 ## 参考
 
 [Mathias’s dotfiles](https://github.com/mathiasbynens/dotfiles)
