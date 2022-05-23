@@ -17,6 +17,9 @@ ln -s dotfiles/.gitconfig .gitconfig
 
 1. Oh-My-Zsh
    [https://ohmyz.sh/](https://ohmyz.sh/)
+   ```bash
+   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+   ```
 
 2. plug：autojump
    [https://github.com/wting/autojump](https://github.com/wting/autojump)
@@ -31,6 +34,8 @@ ln -s dotfiles/.gitconfig .gitconfig
    ```bash
    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
    ```
+5. themes
+   [https://github.com/ohmyzsh/ohmyzsh/wiki/themes](https://github.com/ohmyzsh/ohmyzsh/wiki/themes)
 ## 参考
 
 [Mathias’s dotfiles](https://github.com/mathiasbynens/dotfiles)
