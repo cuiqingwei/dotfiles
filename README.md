@@ -36,10 +36,44 @@ ln -s dotfiles/.gitconfig .gitconfig
    ```
 5. themes
    [https://github.com/ohmyzsh/ohmyzsh/wiki/themes](https://github.com/ohmyzsh/ohmyzsh/wiki/themes)
+
+## vim
+
+1. Vbundle插件管理 (Launch **vim** and run **:PluginInstall**)
+   [https://github.com/VundleVim/Vundle.vim](https://github.com/VundleVim/Vundle.vim)
+   ```bash
+   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+   ```
+2. VimAwesome
+   [https://vimawesome.com/](https://vimawesome.com/)
+3. 目录树NERDTree
+   ```bash
+   let NERDTreeHighlightCursorline = 1       " 高亮当前行
+   let NERDTreeShowLineNumbers     = 1       " 显示行号
+   " 忽略列表中的文件
+   let NERDTreeIgnore = [ '\.pyc$', '\.pyo$', '\.obj$', '\.o$', '\.egg$', '^\.git$', '^\.repo$', '^\.svn$', '^\.hg$' ]
+   " 关闭 NERDTree，当没有文件打开的时候
+   autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+   
+   " <leader>nt 打开 nerdtree 窗口，在左侧栏显示
+   map <leader>nt :NERDTreeToggle<CR>
+   " <leader>tc 关闭当前的 tab
+   map <leader>tc :tabc<CR>
+   " <leader>to 关闭所有其他的 tab
+   map <leader>to :tabo<CR>
+   " <leader>ts 查看所有打开的 tab
+   map <leader>ts :tabs<CR>
+   " <leader>tp 前一个 tab
+   map <leader>tp :tabp<CR>
+   ```
 ## 参考
 
 [Mathias’s dotfiles](https://github.com/mathiasbynens/dotfiles)
 
 [Awesome dotfiles](https://github.com/webpro/awesome-dotfiles)
+
+[VIM 实用插件整理](http://t.csdn.cn/wqDry)
+
+[vimawesome](https://vimawesome.com/)
 
 [Mackup](https://github.com/lra/mackup) : osx系统下管理工具
