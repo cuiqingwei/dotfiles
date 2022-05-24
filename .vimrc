@@ -33,7 +33,10 @@ set ruler
 set nohls
 set incsearch
 
-set rtp+=/opt/homebrew/opt/fzf
+set rtp+=/opt/homebrew/opt/fzf:q:q
+" 修改<leader>为<space>
+" let manleader=" "
+nmap <leader>wq :wq<CR>
 
 " 原文链接：https://blog.csdn.net/bc516125634/article/details/88858097
 let NERDTreeHighlightCursorline = 1       " 高亮当前行
