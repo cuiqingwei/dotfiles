@@ -1,10 +1,14 @@
 # Fig pre block. Keep at the top of this file.
+## just for macos
 . "$HOME/.fig/shell/zshrc.pre.zsh"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
+## for macos
 export ZSH="/Users/gary/.oh-my-zsh"
+## for linux
+export ZSH="/home/gary/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -111,6 +115,7 @@ export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Fig post block. Keep at the bottom of this file.
+## just for macos
 . "$HOME/.fig/shell/zshrc.post.zsh"
 
 # add for autojump
