@@ -193,7 +193,7 @@
 	defaultBranch = main
 
 [safe]
-
+	## just for macos
     directory = /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core
     directory = /usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask
     directory = /usr/local/Homebrew/Library/Taps/homebrew/homebrew-services
