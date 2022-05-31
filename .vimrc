@@ -1,4 +1,5 @@
 set nocompatible              " be iMproved, required
+set guifont=Consolas:h12
 colorscheme peachpuff
 syntax on
 filetype off                  " required
