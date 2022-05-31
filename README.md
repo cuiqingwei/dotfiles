@@ -1,7 +1,6 @@
 # dotfiles
 Dotfiles Backup
 
-
 **dotfiles** 字面意思就是「点文件」，就是以`.`开头的文件，常见的如.bash_profile,.vimrc,.zshrc等等。在linux,osx等系统中，这些dotfiles默认都是隐藏的，在shell下要看到这些文件得用 `ls -a` 命令。常用到vim, iterm ,zsh ,sublime text2等等相关的工具和开发环境，为了用得顺手，也会根据个人习惯和喜好改改不同工具、环境的配置。
 
 用法：
@@ -44,9 +43,12 @@ ln -s dotfiles/.gitconfig .gitconfig
    ```bash
    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
    ```
+   
 2. VimAwesome
    [https://vimawesome.com/](https://vimawesome.com/)
+   
 3. 目录树NERDTree
+
    ```bash
    let NERDTreeHighlightCursorline = 1       " 高亮当前行
    let NERDTreeShowLineNumbers     = 1       " 显示行号
@@ -66,6 +68,17 @@ ln -s dotfiles/.gitconfig .gitconfig
    " <leader>tp 前一个 tab
    map <leader>tp :tabp<CR>
    ```
+## .tmux
+   [Oh my tmux](https://github.com/gpakosz/.tmux)
+
+   ```bash
+   cd ~
+   git clone https://github.com/gpakosz/.tmux.git
+   ln -s -f .tmux/.tmux.conf
+   cp .tmux/.tmux.conf.local .
+   tmux source-file .tmux.conf
+   ```
+   
 ## 参考
 
 [Mathias’s dotfiles](https://github.com/mathiasbynens/dotfiles)
@@ -77,3 +90,5 @@ ln -s dotfiles/.gitconfig .gitconfig
 [vimawesome](https://vimawesome.com/)
 
 [Mackup](https://github.com/lra/mackup) : osx系统下管理工具
+
+[tmux使用](http://t.csdn.cn/2omNJ)
