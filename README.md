@@ -7,9 +7,9 @@ Dotfiles Backup
 
 ```bash
 cd ~
-git clone git@github.com:cuiqingwei/dotfiles.git dotfiles
+git clone git@github.com:cuiqingwei/dotfiles.git .dotfiles
 rm -rf .gitconfig
-ln -s dotfiles/.gitconfig .gitconfig
+ln -s .dotfiles/.gitconfig .gitconfig
 ```
 
 ## zsh
