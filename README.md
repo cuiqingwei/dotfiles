@@ -8,33 +8,9 @@ Dotfiles Backup
 ```bash
 cd ~
 git clone git@github.com:cuiqingwei/dotfiles.git .dotfiles
-rm -rf .gitconfig
-ln -s .dotfiles/.gitconfig .gitconfig
+rm -rf .vimrc
+ln -s .dotfiles/.vimrc .vimrc
 ```
-
-## zsh
-
-1. Oh-My-Zsh
-   [https://ohmyz.sh/](https://ohmyz.sh/)
-   ```bash
-   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-   ```
-
-2. plug：autojump
-   [https://github.com/wting/autojump](https://github.com/wting/autojump)
-
-3. plug：zsh-syntax-highlighting
-   [https://github.com/zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-   ```bash
-   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-   ```
-4. plug：zsh-autosuggestions
-   [https://github.com/zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-   ```bash
-   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-   ```
-5. themes
-   [https://github.com/ohmyzsh/ohmyzsh/wiki/themes](https://github.com/ohmyzsh/ohmyzsh/wiki/themes)
 
 ## vim
 
@@ -78,6 +54,9 @@ set ignorecase                       " 搜索时大小写不敏感
 set path+=**                         " 递归查找子文件,配合 :find *filename* 使用
 set wildmenu                         " 展示匹配的文件列表
 
+" quickfix for cscope
+set cscopequickfix=s-,c-,d-,i-,t-,e- " 使用quickfix窗口来显示cscope结果, :cw 打开窗口，:cclose 关闭窗口
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 插件管理
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -112,6 +91,30 @@ nnoremap <leader><leader>i :PlugInstall<cr>
 nnoremap <leader><leader>u :PlugUpdate<cr>
 nnoremap <leader><leader>c :PlugClean<cr>
 ```
+
+## zsh
+
+1. Oh-My-Zsh
+   [https://ohmyz.sh/](https://ohmyz.sh/)
+   ```bash
+   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+   ```
+
+2. plug：autojump
+   [https://github.com/wting/autojump](https://github.com/wting/autojump)
+
+3. plug：zsh-syntax-highlighting
+   [https://github.com/zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+   ```bash
+   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+   ```
+4. plug：zsh-autosuggestions
+   [https://github.com/zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+   ```bash
+   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+   ```
+5. themes
+   [https://github.com/ohmyzsh/ohmyzsh/wiki/themes](https://github.com/ohmyzsh/ohmyzsh/wiki/themes)
 
 ## .tmux
    [Oh my tmux](https://github.com/gpakosz/.tmux)
