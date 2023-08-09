@@ -137,4 +137,5 @@ nnoremap <leader><leader>c :PlugClean<cr>
 [Mackup](https://github.com/lra/mackup) : osx系统下管理工具
 
 [tmux使用](http://t.csdn.cn/2omNJ)
+
 [How to Do 90% of What Plugins Do (With Just Vim)](https://github.com/changemewtf/no_plugins)
