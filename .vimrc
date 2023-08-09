@@ -29,6 +29,9 @@ set ignorecase                       " 搜索时大小写不敏感
 set path+=**                         " 递归查找子文件,配合 :find *filename* 使用
 set wildmenu                         " 展示匹配的文件列表
 
+" quickfix for cscope
+set cscopequickfix=s-,c-,d-,i-,t-,e- " 使用quickfix窗口来显示cscope结果, :cw 打开窗口，:cclose 关闭窗口
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 插件管理
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
