@@ -17,10 +17,15 @@ ln -s .dotfiles/.vimrc .vimrc
 1. vim-plug插件管理 (Launch **vim** and run **:PluginInstall**)
    [https://github.com/VundleVim/Vundle.vim](https://github.com/junegunn/vim-plug)
    
-2. VimAwesome
+```bash
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+   
+3. VimAwesome
    [https://vimawesome.com/](https://vimawesome.com/)
    
-3. **.vimrc** 快捷复制
+4. **.vimrc** 快捷复制
 
 ```bash
 " Author: Gary <cuiqingwei@gmail.com>
