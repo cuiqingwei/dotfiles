@@ -38,6 +38,9 @@ set cscopequickfix=s-,c-,d-,i-,t-,e- " 使用quickfix窗口来显示cscope结果
 call plug#begin()
 Plug 'preservim/nerdtree'            " 文件浏览器,快捷键 ,n
 Plug 'tpope/vim-commentary'          " 快速注释，常用快捷键 gcc
+Plug 'preservim/tagbar'              " 函数列表
+Plug 'junegunn/fzf'                  " 模糊查找
+Plug 'junegunn/fzf.vim'              " 模糊查找
 call plug#end()
 
 " nerdtree
@@ -49,6 +52,16 @@ let g:NERDTreeHighlightFolders = 1
 let g:NERDTreeHighlightFoldersFullName = 1
 let g:NERDTreeDirArrowExpandable='▷'
 let g:NERDTreeDirArrowCollapsible='▼'
+
+" tagbar
+let g:tagbar_width = 30
+nnoremap <silent> <leader>t :TagbarToggle<cr>
+
+" LeaderF
+nnoremap <leader>f :Files .<cr>
+
+" ack
+nnoremap <leader>F :Ag<space>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 其他配置
@@ -65,3 +78,9 @@ nnoremap <leader>H :execute ":help " . expand("<cword>")<cr>
 nnoremap <leader><leader>i :PlugInstall<cr>
 nnoremap <leader><leader>u :PlugUpdate<cr>
 nnoremap <leader><leader>c :PlugClean<cr>
+
+" 复制当前选中到系统剪切板
+vmap <leader><leader>y "+y
+
+" 将系统剪切板内容粘贴到vim
+nnoremap <leader><leader>p "+p
