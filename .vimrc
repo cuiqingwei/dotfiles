@@ -38,9 +38,11 @@ set cscopequickfix=s-,c-,d-,i-,t-,e- " 使用quickfix窗口来显示cscope结果
 call plug#begin()
 Plug 'preservim/nerdtree'            " 文件浏览器,快捷键 ,n
 Plug 'tpope/vim-commentary'          " 快速注释，常用快捷键 gcc
+Plug 'Yggdroot/LeaderF'              " 模糊查找器 :Leaderf <subcommand>
 Plug 'preservim/tagbar'              " 函数列表
-Plug 'junegunn/fzf'                  " 模糊查找
+Plug 'junegunn/fzf'                  " fzf存储库
 Plug 'junegunn/fzf.vim'              " 模糊查找
+Plug 'vim-airline/vim-airline'       " 多种风格的状态栏
 call plug#end()
 
 " nerdtree
@@ -50,14 +52,14 @@ let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 let g:NERDTreeHighlightFolders = 1
 let g:NERDTreeHighlightFoldersFullName = 1
-let g:NERDTreeDirArrowExpandable='▷'
-let g:NERDTreeDirArrowCollapsible='▼'
+" let g:NERDTreeDirArrowExpandable='▷'
+" let g:NERDTreeDirArrowCollapsible='▼'
 
 " tagbar
 let g:tagbar_width = 30
 nnoremap <silent> <leader>t :TagbarToggle<cr>
 
-" LeaderF
+" FZF
 nnoremap <leader>f :Files .<cr>
 
 " ack
