@@ -7,9 +7,11 @@ Dotfiles Backup
 
 ```bash
 cd ~
-git clone git@github.com:cuiqingwei/dotfiles.git .dotfiles
-rm -rf .vimrc
+git clone https://github.com/cuiqingwei/dotfiles.git .dotfiles
+rm -rf .vimrc 
 ln -s .dotfiles/.vimrc .vimrc
+rm -rf .zshrc 
+ln -s .dotfiles/.zshrc .zshrc
 ```
 
 ## vim
@@ -66,34 +68,14 @@ set cscopequickfix=s-,c-,d-,i-,t-,e- " 使用quickfix窗口来显示cscope结果
 " 插件管理
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin()
-Plug 'preservim/nerdtree'            " 文件浏览器,快捷键 ,n
 Plug 'tpope/vim-commentary'          " 快速注释，常用快捷键 gcc
-Plug 'Yggdroot/LeaderF'              " 模糊查找器 :Leaderf <subcommand>
 Plug 'preservim/tagbar'              " 函数列表
-Plug 'junegunn/fzf'                  " fzf存储库
-Plug 'junegunn/fzf.vim'              " 模糊查找
 Plug 'vim-airline/vim-airline'       " 多种风格的状态栏
 call plug#end()
-
-" nerdtree
-nnoremap <silent> <leader>n :NERDTreeToggle<cr>
-let g:NERDTreeFileExtensionHighlightFullName = 1
-let g:NERDTreeExactMatchHighlightFullName = 1
-let g:NERDTreePatternMatchHighlightFullName = 1
-let g:NERDTreeHighlightFolders = 1
-let g:NERDTreeHighlightFoldersFullName = 1
-" let g:NERDTreeDirArrowExpandable='▷'
-" let g:NERDTreeDirArrowCollapsible='▼'
 
 " tagbar
 let g:tagbar_width = 30
 nnoremap <silent> <leader>t :TagbarToggle<cr>
-
-" FZF
-nnoremap <leader>f :Files .<cr>
-
-" ack
-nnoremap <leader>F :Ag<space>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 其他配置
@@ -126,20 +108,17 @@ nnoremap <leader><leader>p "+p
    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
    ```
 
-2. plug：autojump
-   [https://github.com/wting/autojump](https://github.com/wting/autojump)
-
-3. plug：zsh-syntax-highlighting
+2. plug：zsh-syntax-highlighting
    [https://github.com/zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
    ```bash
    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
    ```
-4. plug：zsh-autosuggestions
+3. plug：zsh-autosuggestions
    [https://github.com/zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
    ```bash
    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
    ```
-5. themes
+4. themes
    [https://github.com/ohmyzsh/ohmyzsh/wiki/themes](https://github.com/ohmyzsh/ohmyzsh/wiki/themes)
 
 ## .tmux

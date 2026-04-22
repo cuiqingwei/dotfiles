@@ -1,11 +1,16 @@
 # 屏蔽 punycode 弃用警告（必须放在最顶部）
 export NODE_NO_WARNINGS=1
 
+# 中文语言环境
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export NODE_NO_WARNINGS=1
+
 # 用 zprof 做性能剖析（需要时取消注释）
 #zmodload zsh/zprof
 
 # ── oh-my-zsh 基础配置 ────────────────────────────────────────────────────────
-export ZSH="/Users/gary/.oh-my-zsh"
+export ZSH="/home/gary/.oh-my-zsh"
 ZSH_THEME="ys"
 
 # 限制 oh-my-zsh 每日一次自动更新检查
@@ -31,7 +36,6 @@ fi
 # ── 插件列表 ──────────────────────────────────────────────────────────────────
 plugins=(
   git
-  autojump
   zsh-syntax-highlighting
   zsh-autosuggestions
   thefuck
@@ -57,16 +61,6 @@ _zsh_tab_accept_or_complete() {
 zle -N _zsh_tab_accept_or_complete
 # 注意：bindkey 语句放在文件最末尾（source ~/.fzf.zsh 之后），防止被 fzf 覆盖
 
-# ── 编译标志 & PATH ────────────────────────────────────────────────────────────
-export ARCHFLAGS="-arch x86_64"
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
-# 集中合并所有 PATH 变量，减少启动解析时间
-export PATH="/opt/homebrew/opt/ruby@3.1/bin:$HOME/.local/bin:/Users/gary/.codeium/windsurf/bin:/Users/gary/.lmstudio/bin:/Users/gary/.opencode/bin:/Users/gary/.antigravity/antigravity/bin:$PATH"
-
-# ── 工具配置（API Keys）────────────────────────────────────────────────────────
-export OLLAMA_API_BASE="http://127.0.0.1:11434"
-export GOOGLE_CLOUD_PROJECT="igcp-272409"
-
 # ── TheFuck 懒加载 ─────────────────────────────────────────────────────────────
 # 拦截第一次输入 fuck，按需初始化，避免启动时调用 Python 带来的 150ms 延迟
 fuck() {
@@ -79,30 +73,12 @@ fuck() {
 #alias ll="/opt/homebrew/bin/exa -alh"
 #alias tree="/opt/homebrew/bin/exa --tree"
 
-# ── iTerm2 集成 ───────────────────────────────────────────────────────────────
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# ── Tabby 配置 ────────────────────────────────────────────────────────────────
-tabby_precmd() { echo -n "\x1b]1337;CurrentDir=$(pwd)\x07" }
-add-zsh-hook precmd tabby_precmd
-
 # ── fzf 配置 ──────────────────────────────────────────────────────────────────
 function vf() { vim $(fzf) }
 fif() {
   if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
   rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
 }
-
-# ── nvm 懒加载 ────────────────────────────────────────────────────────────────
-export NVM_DIR="$HOME/.nvm"
-lazy_load_nvm() {
-  unset -f nvm node npm
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
-}
-nvm() { lazy_load_nvm; nvm "$@"; }
-node() { lazy_load_nvm; node "$@"; }
-npm() { lazy_load_nvm; npm "$@"; }
 
 # ── fzf 加载 ──────────────────────────────────────────────────────────────────
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
